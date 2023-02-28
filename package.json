@@ -1,5 +1,5 @@
 {
-  "name": "@driftt/webext-redux",
+  "name": "@drift/webext-redux",
   "version": "1.0.0",
   "description": "A set of utilities for building Redux applications in Web Extensions.",
   "main": "lib/index.js",

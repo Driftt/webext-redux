@@ -23,7 +23,7 @@ jobs:
       - deps/login
       - deps/install:
           options: --ignore-scripts
-
+      - run: npm run publish
       - run:
           name: Publish
           command: npm publish

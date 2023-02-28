@@ -1,6 +1,6 @@
 {
-  "name": "webext-redux",
-  "version": "2.1.9",
+  "name": "@driftt/webext-redux",
+  "version": "1.0.0",
   "description": "A set of utilities for building Redux applications in Web Extensions.",
   "main": "lib/index.js",
   "typings": "./index.d.ts",
@@ -10,21 +10,21 @@
     "lint-src": "./node_modules/.bin/eslint src/**/*.js",
     "lint-test": "./node_modules/.bin/eslint test/**/*.js",
     "lint": "npm run lint-src && npm run lint-test",
-    "prepublishOnly": "npm run build",
+    "publish": "npm run build",
     "pretest": "./node_modules/.bin/babel src --out-dir lib",
     "test-run": "./node_modules/.bin/mocha --require @babel/register --recursive",
     "test": "npm run lint && npm run test-run"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tshaddix/webext-redux.git"
+    "url": "git+https://github.com/Driftt/webext-redux.git"
   },
-  "author": "Tyler Shaddix",
+  "author": "Drift",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tshaddix/webext-redux/issues"
+    "url": "https://github.com/Driftt/webext-redux/issues"
   },
-  "homepage": "https://github.com/tshaddix/webext-redux#readme",
+  "homepage": "https://github.com/Driftt/webext-redux#readme",
   "dependencies": {
     "lodash.assignin": "^4.2.0",
     "lodash.clonedeep": "^4.5.0"

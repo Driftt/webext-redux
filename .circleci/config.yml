@@ -1,0 +1,46 @@
+version: 2.1
+
+orbs:
+  deps: drift/fe-deps@0.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:lts
+
+    steps:
+      - checkout
+      - deps/login
+      - deps/install:
+          options: --ignore-scripts
+
+  publish:
+    docker:
+      - image: circleci/node:lts
+
+    steps:
+      - checkout
+      - deps/login
+      - deps/install:
+          options: --ignore-scripts
+      - run: npm run publish
+      - run:
+          name: Publish
+          command: npm publish
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - test:
+          context: APP
+
+      - publish:
+          context: APP
+          filters:
+            branches:
+              only:
+                - master
+                - /rc-.*/
+          requires:
+            - test

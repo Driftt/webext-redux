@@ -10,7 +10,7 @@ export default [
     output: {
       file: 'dist/webext-redux.js',
       format: 'umd',
-      name: 'WebextRedux',
+      name: '@drift/WebextRedux',
       indent: false
     },
     plugins: [
@@ -28,7 +28,7 @@ export default [
     output: {
       file: 'dist/webext-redux.min.js',
       format: 'umd',
-      name: 'WebextRedux',
+      name: '@drift/WebextRedux',
       indent: false
     },
     plugins: [

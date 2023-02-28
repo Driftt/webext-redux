@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+  deps: drift/fe-deps@0.1
+
+jobs:
+  build_and_deploy:
+    docker:
+      - image: circleci/node:14.9.0
+    steps:
+      - checkout
+      - deps/login
+      - run:
+          name: install
+          command: npm install
+      - run: npm run prepublishOnly
+
+workflows:
+  version: 2
+  prod_stage:
+    jobs:
+      - build_and_deploy:
+          context: APP
+          filters:
+            branches:
+              only:
+                - master
